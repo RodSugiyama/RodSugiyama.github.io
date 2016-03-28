@@ -10,10 +10,10 @@
 <script> new Firebase('https://popping-heat-8784.firebaseio.com');
 
 var ref = new Firebase("https://popping-heat-8784.firebaseio.com/FL000000001");
+
 var count=0;
-ref.on("value", function(snapshot) {
+var snappy = ref.on("value", function(snapshot) {
   console.log(snapshot.val());
-  var snap=snapshot.val();
 }, function (errorObject) {
   console.log("The read failed: " + errorObject.code);
 });
@@ -21,13 +21,12 @@ ref.on("value", function(snapshot) {
 // next how to display on screen-->
 
 var num=[3,4,2]
-document.write(snap);
+document.write(snappy);
 </script>
 
 
 <br>
 
-<br>
 
 <h1>Hello World - My First JavaScript</h1>
 
@@ -37,15 +36,6 @@ Click me to display Date and Time.</button>
 
 <p id="demo"></p>
 
-
-<select multiple="multiple" size="10" name="Choice 1">
-<optgroup label="A"></optgroup><optgroup label="B"></optgroup><optgroup label="C"></optgroup>
-</select>
-<br>
-<br>
-<button value="On" name="Button 1" type="button"></button><big><big><big><big><big><textarea cols="2" rows="1" name="on-off">on or off</textarea></big></big></big></big></big><br>
-<br>
-<br>
 
 
 </body></html>
