@@ -12,23 +12,19 @@ var Firebase = require("firebase");
 <script> 
 var ref = new Firebase("https://popping-heat-8784.firebaseio.com/");
 var count=0;
-ref.on("child_added", function(snap) {
-  count++;
-  console.log("added", snap.key());
+ref.on("value", function(snapshot) {
+  console.log(snapshot.val());
+}, function (errorObject) {
+  console.log("The read failed: " + errorObject.code);
 });
-
-// length will always equal count, since snap.val() will include every child_added event
-// triggered before this point
-ref.once("value", function(snap) {
-  console.log("initial data loaded!", Object.keys(snap.val()).length === count);
-});
+var snap=snapshot.val();
 </script>
 <!-- next how to display on screen-->
 <p id="demo"></p>
 
 <script>
 var num=[3,4,2]
-document.write(ref);
+document.write(snap);
 </script>
 
 
