@@ -14,8 +14,8 @@ var ref = new Firebase("https://popping-heat-8784.firebaseio.com"); // sets path
 
 ref.on("value", function(snapshot) {
   console.log(snapshot.val());
-  var testdata = snapshot.val();
-  document.write("testdata01= " + testdata);
+  //var testdata = snapshot.val();
+  //document.write("testdata01= " + testdata);
 }, function (errorObject) {
   console.log("The read failed: " + errorObject.code);
 });
