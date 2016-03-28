@@ -5,16 +5,17 @@
 </head>
 
 <body>
-// yeah I should put this script at the end of teh body - hackin now
+<!-- yeah I should put this script at the end of teh body - hackin now -->
 <script> var Firebase = require("firebase");
 var myFirebaseRef = new Firebase("https://popping-heat-8784.firebaseio.com/");
 myFirebaseRef.child("FL000000001/Notes").on("value", function(snapshot) {
   alert(snapshot.val());  // Alerts "first unit's Notes"
 });
-// next how to display on screen
-document.write(myFirebaseRef);
-</script>
+<!-- next how to display on screen-->
 
+document.getElementById("demo").innerHTML = myFirebaseRef;
+</script>
+<p id="demo"></p>
 <br>
 <label>Hello World</label><br>
 <br>
