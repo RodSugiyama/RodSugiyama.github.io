@@ -9,7 +9,8 @@
 <!-- yeah I should put this script at the end of the body - hackin now -->
 <script> new Firebase('https://popping-heat-8784.firebaseio.com');
 
-var ref = new Firebase("https://popping-heat-8784.firebaseio.com/FL000000001"); // sets path to specific JSON object
+//var ref = new Firebase("https://popping-heat-8784.firebaseio.com/FL000000001"); // sets path to specific JSON object
+var ref = new Firebase("https://popping-heat-8784.firebaseio.com"); // sets path to specific JSON object
 
 var count=0;
 var testdata = ref.on("value", function(snapshot) {
