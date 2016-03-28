@@ -1,16 +1,15 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html><head><meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>hello-world-kompozer</title>
 <!--Firebase initial stuff here in the head-->
-<script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js">;
-new Firebase('https://popping-heat-8784.firebaseio.com');
-var Firebase = require("firebase");
-</script>
+<script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js"></script>
+
 </head>
 
 <body>
 <!-- yeah I should put this script at the end of the body - hackin now -->
-<script> 
-var ref = new Firebase("https://popping-heat-8784.firebaseio.com/");
+<script> new Firebase('https://popping-heat-8784.firebaseio.com');
+
+var ref = new Firebase("https://popping-heat-8784.firebaseio.com/FL000000001/Notes");
 var count=0;
 ref.on("value", function(snapshot) {
   console.log(snapshot.val());
