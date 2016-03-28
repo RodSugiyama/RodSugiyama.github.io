@@ -30,15 +30,19 @@ document.writeln(" ");
 //document.writeln("test data= " + testdata);
 
 var num=[3,4,2]
-for (i = 0; i < num.length; i++)
-  document.writeln(num[i] + "<br>");
-  }
+var text = "";
+var i;
+for (i = 0; i < num.length; i++) {
+    text += num[i] + "<br>";
+}
 
+document.getElementById("demo").innerHTML = text;
 //document.getElementById("testdata").innerHTML = "Notes" + testdata.Notes;
 </script>
+
 </pre>
 <p id="testdata"></p>
-
+</p id="num"></p>
 <br>
 
 <!-- ***keep for later use to get specific data -->
