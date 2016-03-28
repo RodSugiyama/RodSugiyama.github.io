@@ -11,7 +11,7 @@
 
 //var ref = new Firebase("https://popping-heat-8784.firebaseio.com/FL000000001"); // sets path to specific unit
 var ref = new Firebase("https://popping-heat-8784.firebaseio.com"); // sets path to all units
-
+var snapshot = "";
 ref.on("value", function(snapshot) {
   console.log(snapshot.val());
   //var testdata = snapshot.val();
@@ -21,13 +21,13 @@ ref.on("value", function(snapshot) {
 });
 //testdata2 = JSON.parse(testdata);
 </script>
-// next how to display stuff on screen-->
+<!--// next how to display stuff on screen-->
 
 <pre>
 <script>
 document.writeln("ref= " + ref);
 document.writeln(" ");
-//document.writeln("test data= " + testdata);
+document.writeln("test data= " + snapshot);
 
 var num=[3,4,2];
 var text = "";
