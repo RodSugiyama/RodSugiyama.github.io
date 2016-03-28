@@ -18,17 +18,21 @@ var testdata = ref.on("value", function(snapshot) {
   console.log("The read failed: " + errorObject.code);
 });
 //testdata2 = JSON.parse(testdata);
+</script>
+// next how to display on screen-->
+
+<pre>
+<script>
 document.writeln("ref= " + ref);
 document.writeln(" ");
 document.writeln("test data= " + testdata);
-// next how to display on screen-->
 
 var num=[3,4,2]
 document.writeln(num);
 
 //document.getElementById("testdata").innerHTML = "Notes" + testdata.Notes;
 </script>
-
+</pre>
 <p id="testdata"></p>
 
 <br>
