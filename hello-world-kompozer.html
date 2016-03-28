@@ -1,15 +1,24 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html><head><meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>hello-world-kompozer</title>
-//Firebase initial stuff here in the head
-<script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js"></script>
+<html>
+ <head><meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>hello-world-kompozer</title>
+ <!--Firebase initial stuff here in the head-->
+ <script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js">;
+  var Firebase = require("firebase");
+  </script>
 </head>
 
 <body>
-<!-- yeah I should put this script at the end of teh body - hackin now -->
-<script> var Firebase = require("firebase");
+<!-- yeah I should put this script at the end of the body - jus hackin now -->
+<!-- read data-->
+<script>
+// set path to data
 var myFirebaseRef = new Firebase("https://popping-heat-8784.firebaseio.com/");
-myFirebaseRef.child("FL000000001/Notes").on("value", function(snapshot) {
-  alert(snapshot.val());  // Alerts "first unit's Notes"
+
+// Attach an asynchronous callback to read the data at our posts reference
+ref.on("value", function(snapshot) {
+  console.log(snapshot.val());
+}, function (errorObject) {
+  console.log("The read failed: " + errorObject.code);
 });
 <!-- next how to display on screen-->
 
