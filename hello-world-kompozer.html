@@ -1,35 +1,34 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
- <head><meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>hello-world-kompozer</title>
- <!--Firebase initial stuff here in the head-->
- <script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js">;
-  var Firebase = require("firebase");
-  </script>
+<html><head><meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>hello-world-kompozer</title>
+<!--Firebase initial stuff here in the head-->
+<script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js">;
+new Firebase('https://popping-heat-8784.firebaseio.com');
+var Firebase = require("firebase");
+</script>
 </head>
 
 <body>
-<!-- yeah I should put this script at the end of the body - jus hackin now -->
-<!-- read data-->
-<script>
-// set path to data
-var myFirebaseRef = new Firebase("https://popping-heat-8784.firebaseio.com/");
-
-// Attach an asynchronous callback to read the data at our posts reference
-ref.on("value", function(snapshot) {
-  console.log(snapshot.val());
-}, function (errorObject) {
-  console.log("The read failed: " + errorObject.code);
+<!-- yeah I should put this script at the end of the body - hackin now -->
+<script> 
+var ref = new Firebase("https://popping-heat-8784.firebaseio.com/");
+var count=0;
+ref.on("child_added", function(snap) {
+  count++;
+  console.log("added", snap.key());
 });
-<!-- next how to display on screen-->
 
-document.getElementById("demo").innerHTML = myFirebaseRef;
+// length will always equal count, since snap.val() will include every child_added event
+// triggered before this point
+ref.once("value", function(snap) {
+  console.log("initial data loaded!", Object.keys(snap.val()).length === count);
+});
 </script>
-<p id="demo"></p>
-<br>
-<label>Hello World</label><br>
+<!-- next how to display on screen-->
 <br>
 
-<h1>My First JavaScript</h1>
+<br>
+
+<h1>Hello World - My First JavaScript</h1>
 
 <button type="button"
 onclick="document.getElementById('demo').innerHTML = Date()">
