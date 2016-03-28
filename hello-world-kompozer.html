@@ -12,13 +12,13 @@
 var ref = new Firebase("https://popping-heat-8784.firebaseio.com/FL000000001"); // sets path to specific JSON object
 
 var count=0;
-ref.on("value", function(snapshot) {
+var obj = ref.on("value", function(snapshot) {
   console.log(snapshot.val());
 }, function (errorObject) {
   console.log("The read failed: " + errorObject.code);
 });
-var obj = JSON.parse(snapshot.val());
-document.write(obj);
+testdata = JSON.parse(obj);
+document.write(testdata);
 // next how to display on screen-->
 
 var num=[3,4,2]
