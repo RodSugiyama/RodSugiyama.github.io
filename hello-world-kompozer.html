@@ -17,7 +17,7 @@ ref.on("value", function(snapshot) {
 }, function (errorObject) {
   console.log("The read failed: " + errorObject.code);
 });
-var obj = JSON.parse(ref);
+var obj = JSON.parse(snapshot.val());
 document.write(obj);
 // next how to display on screen-->
 
